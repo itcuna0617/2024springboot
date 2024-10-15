@@ -26,6 +26,7 @@ public class FoodService {
 
 	@Transactional
 	public FoodEntity createFood(
+//			CreateAndEditFoodRequest -> 이거는 DTO에 해당
 			CreateAndEditFoodRequest request
 			) {
 		FoodEntity food = FoodEntity.builder()
@@ -35,6 +36,8 @@ public class FoodService {
 				.updatedAt(ZonedDateTime.now())
 				.build();
 		
+//		repository의 save 메서드에는 entity를 넘겨주어야 한다.
+//		이를 위해 매개변수로 받아온 DTO를 위에서 Entity의 builder를 통해 Entity로 변환하여 사용한다.
 		foodRepository.save(food);
 		
 		request.getMenus().forEach((menu)->{
