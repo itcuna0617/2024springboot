@@ -56,15 +56,19 @@ public class TodoRepositoryTest {
 //		todoRepository.save(todo);
 //	}
 	
-	@Test
-	public void testPaging() {
-		Pageable pageable = PageRequest.of(0, 10, Sort.by("tno").descending());
-		Page<TodoEntity> result = todoRepository.findAll(pageable);
-		
-		log.info(result.getTotalElements());
-		log.info(result.getContent());
-	}
-	
+//	@Test
+//	public void testPaging() {
+//		Pageable pageable = PageRequest.of(0, 10, Sort.by("tno").descending());
+//		Page<TodoEntity> result = todoRepository.findAll(pageable);
+//		
+//		log.info(result.getTotalElements());
+//		log.info(result.getContent());
+//	}
+
+//	@Test
+//	public void testSearch1() {
+//		todoRepository.search1();
+//	}
 	
 	
 	
